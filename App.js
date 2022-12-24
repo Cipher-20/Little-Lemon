@@ -1,20 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import Footer from './components/Footer/Footer';
+import LittleLemonHeader from './components/LitleLemonHeader/LittleLemonHeader';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <ScrollView style={styles.container}>
+      <LittleLemonHeader />
       <StatusBar style="auto" />
-    </View>
+
+      <View style={styles.footer}>
+        <Footer />
+      
+      </View>
+
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flex:1,
+    backgroundColor: '##495E57',
   },
+  footer: {
+    flex:1,
+    marginTop:20
+  }
 });
