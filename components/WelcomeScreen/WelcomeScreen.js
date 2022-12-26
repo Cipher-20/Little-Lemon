@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 
-export default function ContentText() {
+export default function WelcomeScreen() {
     return (
-        <View style={styles.container}>
+        <ScrollView indicatorStyle="white" style={styles.container}>
             <Text style={styles.header}>
                 Welcome to Little Lemon
             </Text>
@@ -13,23 +13,27 @@ export default function ContentText() {
                 serves simple food and classic cocktails in a lively but casual environment.
                 We would love to hear more about your experience with us!
             </Text>
-        </View>
+        </ScrollView>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        padding: 30,
+        flex:1,
         color: 'black'
     },
     header:{
+        padding: 40,
         fontSize: 30,
+        color: '#EDEFEE',
         textAlign:'center'
     },
     textStyle:{
         fontSize: 20,
+        padding: 20,
         textAlign:'center',
-        marginVertical: 8
+        color: '#EDEFEE',
+        marginVertical: 8,
     }
   });
   

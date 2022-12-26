@@ -4,7 +4,7 @@ import { StyleSheet,View, Text } from 'react-native';
 export default function Footer() {
    return (
     <View style={styles.container}>
-        <Text style={styles.textStyle}>
+        <Text style={styles.footerText}>
             &copy; All rights reserved by Little Lemon, 2022
         </Text>
     </View>
@@ -13,12 +13,13 @@ export default function Footer() {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#F4CE14',
-        marginTop:317
+        backgroundColor: '#EE9972',
+        marginBottom: 0,
     },
-    textStyle:{
+    footerText:{
         fontSize: 12,
         color: 'black',
         textAlign:'center',
+        fontStyle: 'italic'
     }
   });
