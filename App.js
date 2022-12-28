@@ -15,13 +15,13 @@ export default function App() {
     <LittleLemonHeader />
     <StatusBar style="auto" />
 
-    {/* <WelcomeScreen /> */}
+    <WelcomeScreen />
 
     {/* <FlatListMenuItems /> */}
 
     {/* <SectionListMenuItems /> */}
 
-    <Login />
+    {/* <Login /> */}
 </View>
 
 {/* <View style={styles.footerContainer}>
