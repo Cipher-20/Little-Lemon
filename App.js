@@ -3,7 +3,9 @@ import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import WelcomeScreen from './components/WelcomeScreen/WelcomeScreen';
 import Footer from './components/Footer/Footer';
 import LittleLemonHeader from './components/LittleLemonHeader/LittleLemonHeader';
-import MenuItems from './components/MenuItems/MenuItems';
+import FlatListMenuItems from './components/MenuItems/FlatListMenuItems.js';
+import SectionListMenuItems from './components/MenuItems/SectionListMenuItems';
+import Login from './components/Login/Login';
 
 export default function App() {
   return (
@@ -15,12 +17,16 @@ export default function App() {
 
     {/* <WelcomeScreen /> */}
 
-    <MenuItems />
+    {/* <FlatListMenuItems /> */}
+
+    {/* <SectionListMenuItems /> */}
+
+    <Login />
 </View>
 
-<View style={styles.footerContainer}>
+{/* <View style={styles.footerContainer}>
   <Footer />
-</View>
+</View> */}
 
 </>
   );

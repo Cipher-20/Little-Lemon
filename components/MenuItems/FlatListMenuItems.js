@@ -33,7 +33,7 @@ const Item = ({ name, price }) => (
   </View>
 );
 
-export default function MenuItems() {
+export default function FlatListMenuItems() {
 
       const renderItem = ({ item }) => <Item name={item.name} price={item.price}/>
 
