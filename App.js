@@ -7,27 +7,39 @@ import FlatListMenuItems from './components/MenuItems/FlatListMenuItems.js';
 import SectionListMenuItems from './components/MenuItems/SectionListMenuItems';
 import Login from './components/Login/Login';
 
+
+import { NavigationContainer } from '@react-navigation/native'; 
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
+
+
 export default function App() {
+  const Stack = createNativeStackNavigator();
+
   return (
 <>
-<View style={styles.container}>
+  <NavigationContainer>
+    <View style={styles.container}>
 
-    <LittleLemonHeader />
-    <StatusBar style="auto" />
+      <LittleLemonHeader />
+      <StatusBar style="auto" />
+    
+      <Stack.Navigator 
+        initialRouteName='Login'
+        screenOptions={{ headerStyle: { backgroundColor: '#FBDABB'} }}
+      >
+        <Stack.Screen name="Welcome" component={WelcomeScreen} options={{ title: 'Home',  }}/>
+        <Stack.Screen name="Login" component={Login} />
 
-    <WelcomeScreen />
+      </Stack.Navigator>
 
-    {/* <FlatListMenuItems /> */}
+      {/* <Login /> */}
+    </View>
 
-    {/* <SectionListMenuItems /> */}
+    <View style={styles.footerContainer}>
+      <Footer />
+    </View>
 
-    {/* <Login /> */}
-</View>
-
-{/* <View style={styles.footerContainer}>
-  <Footer />
-</View> */}
-
+</NavigationContainer>
 </>
   );
 }

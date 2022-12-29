@@ -1,9 +1,12 @@
 import * as React from 'react';
-import { StyleSheet, Text,View, ScrollView, Image } from 'react-native';
+import { StyleSheet, Text,View, ScrollView, Image, useColorScheme, } from 'react-native';
 
 export default function WelcomeScreen() {
+
+    // const colorSchame = useColorScheme();
+
     return (
-        <ScrollView indicatorStyle="white" style={styles.container}>
+        <ScrollView style={styles.container}>
         <View style={styles.headerWrapper}>
 
             <Image
@@ -31,7 +34,9 @@ export default function WelcomeScreen() {
 const styles = StyleSheet.create({
     container: {
         flex:1,
-        color: 'black'
+        color: 'black',
+        backgroundColor: 'rgb(74, 95, 88)'
+
     },
     headerWrapper: {
         flexDirection: 'row',
@@ -57,7 +62,7 @@ const styles = StyleSheet.create({
     logo:{
         height: 100,
         width: 100,
-        borderRadius: 20,
+        
     }
   });
   
