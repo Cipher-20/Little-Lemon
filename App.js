@@ -9,11 +9,12 @@ import Login from './components/Login/Login';
 
 
 import { NavigationContainer } from '@react-navigation/native'; 
-import {createNativeStackNavigator} from "@react-navigation/native-stack";
-
+import { createDrawerNavigator } from '@react-navigation/drawer';
+// import {createDrawerNavigator} from '@react-navigation/drawer';
+const Drawer = createDrawerNavigator();
 
 export default function App() {
-  const Stack = createNativeStackNavigator();
+
 
   return (
 <>
@@ -23,16 +24,14 @@ export default function App() {
       <LittleLemonHeader />
       <StatusBar style="auto" />
     
-      <Stack.Navigator 
-        initialRouteName='Login'
-        screenOptions={{ headerStyle: { backgroundColor: '#FBDABB'} }}
+      <Drawer.Navigator 
+      useLegacyImplementation  initialRouteName="Login"
+        // screenOptions={{ headerStyle: { backgroundColor: '#FBDABB'} }}
       >
-        <Stack.Screen name="Welcome" component={WelcomeScreen} options={{ title: 'Home',  }}/>
-        <Stack.Screen name="Login" component={Login} />
+        <Drawer.Screen name="Welcome" component={WelcomeScreen} />
+        <Drawer.Screen name="Login" component={Login} />
 
-      </Stack.Navigator>
-
-      {/* <Login /> */}
+      </Drawer.Navigator>
     </View>
 
     <View style={styles.footerContainer}>
