@@ -90,7 +90,8 @@ export default function SectionListMenuItems() {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      color: 'black'
+      color: 'black',
+      backgroundColor: 'rgb(74, 95, 88)'
     },
     header:{
         fontSize: 35,

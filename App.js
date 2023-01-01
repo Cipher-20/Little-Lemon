@@ -9,8 +9,11 @@ import Login from './components/Login/Login';
 
 
 import { NavigationContainer } from '@react-navigation/native'; 
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-// import {createDrawerNavigator} from '@react-navigation/drawer';
+
+
+
 const Drawer = createDrawerNavigator();
 
 export default function App() {
@@ -21,22 +24,25 @@ export default function App() {
   <NavigationContainer>
     <View style={styles.container}>
 
-      <LittleLemonHeader />
+      {/* <LittleLemonHeader /> */}
       <StatusBar style="auto" />
     
       <Drawer.Navigator 
-      useLegacyImplementation  initialRouteName="Login"
-        // screenOptions={{ headerStyle: { backgroundColor: '#FBDABB'} }}
+      useLegacyImplementation
+      initialRouteName="Welocome"
+      screenOptions={{ headerStyle: { backgroundColor: '#EE9972' } }}
       >
-        <Drawer.Screen name="Welcome" component={WelcomeScreen} />
+        <Drawer.Screen name="Welcome" component={WelcomeScreen}  />
         <Drawer.Screen name="Login" component={Login} />
+        <Drawer.Screen name="Section list" component={SectionListMenuItems} />
+
 
       </Drawer.Navigator>
     </View>
 
-    <View style={styles.footerContainer}>
+    {/* <View style={styles.footerContainer}>
       <Footer />
-    </View>
+    </View> */}
 
 </NavigationContainer>
 </>
@@ -46,7 +52,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex:1,
-    backgroundColor: 'rgb(74, 95, 88)',
   },
   footerContainer: {
     backgroundColor: 'rgb(74, 95, 88)',

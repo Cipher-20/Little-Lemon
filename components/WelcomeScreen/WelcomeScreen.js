@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { StyleSheet, Text,View, ScrollView, Image, useColorScheme, } from 'react-native';
+import { StyleSheet, Text,View, ScrollView, Image, useColorScheme, Pressable, } from 'react-native';
 
-export default function WelcomeScreen() {
+export default function WelcomeScreen({navigation}) {
 
     // const colorSchame = useColorScheme();
 
@@ -10,23 +10,31 @@ export default function WelcomeScreen() {
         <View style={styles.headerWrapper}>
 
             <Image
-            style={styles.logo} 
-            source={require('../../assets/logo.png')}
-            resizeMode='cover'
-            accessible={true}
+            style={styles.logo}
+            source={require('../../assets/little-lemon-logo.png')}
+            resizeMode='contain'
+            accessoble={true}
             accessibilityLabel={'Little Lemon Logo'}
-            
             />
-            <Text style={styles.header}>
-                 Little Lemon
-            </Text>
+
+
         </View>
 
             <Text style={styles.textStyle}>
-                Little Lemon is a charming neighborhood bistro that 
-                serves simple food and classic cocktails in a lively but casual environment.
-                We would love to hear more about your experience with us!
+                Little Lemon, your local Mediterranean Bistro.
             </Text>
+
+            <Pressable
+                style={styles.button}
+             onPress={() =>{
+                navigation.navigate('Login')
+             }}
+            >
+
+            <Text style={styles.textButton}>Newsletter</Text>
+            </Pressable>
+
+
         </ScrollView>
     );
 }
@@ -35,13 +43,14 @@ const styles = StyleSheet.create({
     container: {
         flex:1,
         color: 'black',
-        backgroundColor: 'rgb(74, 95, 88)'
+        backgroundColor: '#EDEFEE'
 
     },
     headerWrapper: {
         flexDirection: 'row',
         justifyContent: 'center',
-        margin: 10,
+        margin: 50,
+        marginTop: 100
     },
     header:{
         paddingRight: 10,
@@ -56,13 +65,32 @@ const styles = StyleSheet.create({
         fontSize: 20,
         padding: 20,
         textAlign:'center',
-        color: '#EDEFEE',
+        // color: '#EDEFEE',
         marginVertical: 8,
+        fontWeight: 'bold'
     },
     logo:{
-        height: 100,
-        width: 100,
-        
+        height: 200,
+        width: 100, 
+    },
+    button:{
+        fontSize:22,
+        backgroundColor: 'rgb(62,82,75)',
+        borderColor: 'rgb(62,82,75)',
+        padding: 10,
+        margin: 25,
+        marginVertical:130,
+        borderWidth: 2,
+        borderRadius: 10
+    },
+    textButton:{
+        textAlign:'center',
+        fontSize:16,
+        color:'white'
     }
   });
   
+
+//   Little Lemon is a charming neighborhood bistro that 
+//   serves simple food and classic cocktails in a lively but casual environment.
+//   We would love to hear more about your experience with us!
