@@ -1,12 +1,14 @@
 import * as React from 'react';
-import { StyleSheet, Text,View, ScrollView, Image, useColorScheme, Pressable, } from 'react-native';
+import { StyleSheet, Text,View, ScrollView, Image, useColorScheme, Pressable, ImageBackground, } from 'react-native';
 
 export default function WelcomeScreen({navigation}) {
 
     // const colorSchame = useColorScheme();
-
+    const image = require('../../assets/little-lemon-background.png');
     return (
-        <ScrollView style={styles.container}>
+    <ImageBackground source={image} style={styles.container}>
+        <ScrollView >
+
         <View style={styles.headerWrapper}>
 
             <Image
@@ -26,16 +28,17 @@ export default function WelcomeScreen({navigation}) {
 
             <Pressable
                 style={styles.button}
-             onPress={() =>{
-                navigation.navigate('Login')
-             }}
-            >
+                onPress={() =>{
+                    navigation.navigate('Login')
+                }}
+                >
 
             <Text style={styles.textButton}>Newsletter</Text>
             </Pressable>
 
 
         </ScrollView>
+    </ImageBackground>
     );
 }
 
@@ -49,8 +52,9 @@ const styles = StyleSheet.create({
     headerWrapper: {
         flexDirection: 'row',
         justifyContent: 'center',
-        margin: 50,
-        marginTop: 100
+        margin: 120,
+        marginTop: 50,
+        backgroundColor:'white'
     },
     header:{
         paddingRight: 10,
@@ -66,7 +70,6 @@ const styles = StyleSheet.create({
         padding: 20,
         textAlign:'center',
         // color: '#EDEFEE',
-        marginVertical: 8,
         fontWeight: 'bold'
     },
     logo:{

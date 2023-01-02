@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, SectionList } from 'react-native';
+import { StyleSheet, Text, View, SectionList, ImageBackground } from 'react-native';
 import Footer from '../Footer/Footer';
 
 const menuItemsToDisplay = [
@@ -65,6 +65,8 @@ const Title = ({ title }) => (
         <Text></Text>
     </View>
   )
+  
+  const image = require('../../assets/little-lemon-background.png');
 
 export default function SectionListMenuItems() {
 
@@ -72,7 +74,7 @@ export default function SectionListMenuItems() {
       const renderTitle = ({ section: {title} }) => <Title title={title} />
       const renderFooterItem = ({}) => <Footer />
     return (    
-        <View style={styles.container}>
+        <ImageBackground source={image} style={styles.container}>
             <SectionList
             keyExtractor={(item, index) => item + index}
             sections={menuItemsToDisplay}
@@ -83,7 +85,7 @@ export default function SectionListMenuItems() {
 
             ></SectionList>
 
-        </View>
+        </ImageBackground>
     );
 }
 
@@ -91,7 +93,7 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       color: 'black',
-      backgroundColor: 'rgb(74, 95, 88)'
+      backgroundColor: 'rgb(53, 122, 98)'
     },
     header:{
         fontSize: 35,
@@ -109,7 +111,7 @@ const styles = StyleSheet.create({
     },
 
     itemText: {
-      color: '#F4CE14',
+      color: 'black',
       fontSize: 20,
     },
 
@@ -119,7 +121,7 @@ const styles = StyleSheet.create({
     },
 
     headerStyle:{
-        backgroundColor: '#F4CE14',
+        backgroundColor: '#EE9972',
     },
     headerSection:{
         color: 'black',

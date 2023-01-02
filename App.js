@@ -11,26 +11,26 @@ import Login from './components/Login/Login';
 import { NavigationContainer } from '@react-navigation/native'; 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { ImageBackground } from 'react-native';
 
 
 
 const Drawer = createDrawerNavigator();
 
 export default function App() {
-
+  const image = require('./assets/little-lemon-background.png');
 
   return (
 <>
   <NavigationContainer>
-    <View style={styles.container}>
+    <ImageBackground source={image} style={styles.container}>
 
-      {/* <LittleLemonHeader /> */}
       <StatusBar style="auto" />
     
       <Drawer.Navigator 
       useLegacyImplementation
       initialRouteName="Welocome"
-      screenOptions={{ headerStyle: { backgroundColor: '#EE9972' } }}
+      screenOptions={{ headerStyle: { backgroundColor: 'rgb(84, 193, 133)' } }}
       >
         <Drawer.Screen name="Welcome" component={WelcomeScreen}  />
         <Drawer.Screen name="Login" component={Login} />
@@ -38,7 +38,7 @@ export default function App() {
 
 
       </Drawer.Navigator>
-    </View>
+    </ImageBackground>
 
     {/* <View style={styles.footerContainer}>
       <Footer />

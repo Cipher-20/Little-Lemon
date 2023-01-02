@@ -44,7 +44,7 @@ export default function Login({ navigation }){
 
                     onPress={() =>{
                         Alert.alert('Thanks for subscribing', 'stay tuned!')
-                    navigation.navigate('Welcome')
+                    navigation.navigate('Section list')
                     }}
                 >
                     <Text 
@@ -76,7 +76,7 @@ export default function Login({ navigation }){
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: 'white'
+      backgroundColor: 'rgb(70, 153, 110)'
     },
     headerText: {
       padding: 40,
@@ -129,7 +129,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent:'center',
         marginTop:50,
-        margin:15
+        marginLeft: 133,
+        marginRight: 133,
+        backgroundColor: 'white',
+        borderWidth: 3,
+        borderColor: 'white',
+        borderRadius: 19
     },
     blured:{
         fontSize:22,
