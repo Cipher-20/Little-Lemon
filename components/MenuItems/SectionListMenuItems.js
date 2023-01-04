@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, SectionList, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, SectionList, ImageBackground, Image } from 'react-native';
 import Footer from '../Footer/Footer';
 
 const menuItemsToDisplay = [
@@ -85,6 +85,25 @@ export default function SectionListMenuItems() {
 
             ></SectionList>
 
+
+
+
+            {/* <ImageBackground
+            style={styles.boxStyle}
+            source={require('../../assets/box-middle.png')}
+            >
+            <ImageBackground /> */}
+
+            {/* <Image
+              source={require('../../assets/box-middle.png')}
+              style={styles.boxStyle}
+            /> */}
+
+            <Image
+                          source={require('../../assets/box-middle.png')}
+                          style={styles.boxStyle}
+            />
+
         </ImageBackground>
     );
 }
@@ -128,6 +147,13 @@ const styles = StyleSheet.create({
         fontSize: 26,
         flexWrap: 'wrap',
         textAlign: 'center',
+    },
+
+    boxStyle:{
+      height:100,
+      width:360,
+      resizeMode: 'repeat',
+      padding:70
     }
     
   });
