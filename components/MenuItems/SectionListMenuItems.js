@@ -47,14 +47,26 @@ const menuItemsToDisplay = [
   ];
 
 
-const Item = ({ name, price }) => (
-  <View style={styles.innerContainer}>
-    <Text style={styles.itemText}>{name}</Text>
-    <Text style={styles.itemText}>{price}</Text>
+const ItemBackground = ({ name, price }) => (
+  <View >
+
+    <ImageBackground
+      source={require('../../assets/box-middle.png')}
+      style={styles.boxStyle}>
+          <View style={styles.innerContainer}>
+            <Text style={styles.itemText}>{name}</Text>
+            <Text style={styles.itemText}>{price}</Text>
+          </View>
+
+    </ImageBackground>
+     
+
   </View>
-);
+    );
+
 
 const Title = ({ title }) => (
+
     <View style={styles.headerStyle}>
       <Text style={styles.headerSection}>{title}</Text>
     </View>
@@ -70,7 +82,7 @@ const Title = ({ title }) => (
 
 export default function SectionListMenuItems() {
 
-      const renderItem = ({ item }) => <Item name={item.name} price={item.price}/>
+      const renderItemBackground = ({ item }) => <ItemBackground name={item.name} price={item.price}/>
       const renderTitle = ({ section: {title} }) => <Title title={title} />
       const renderFooterItem = ({}) => <Footer />
     return (    
@@ -79,7 +91,7 @@ export default function SectionListMenuItems() {
             keyExtractor={(item, index) => item + index}
             sections={menuItemsToDisplay}
             renderSectionHeader={renderTitle}
-            renderItem={renderItem}
+            renderItem={renderItemBackground}
             ItemSeparatorComponent={Separator}
             ListFooterComponent={renderFooterItem}
 
@@ -99,10 +111,7 @@ export default function SectionListMenuItems() {
               style={styles.boxStyle}
             /> */}
 
-            <Image
-                          source={require('../../assets/box-middle.png')}
-                          style={styles.boxStyle}
-            />
+           
 
         </ImageBackground>
     );
@@ -123,15 +132,18 @@ const styles = StyleSheet.create({
 
 
     innerContainer:{
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      paddingHorizontal: 40,
-      paddingVertical: 20,
+      // flexDirection: 'row',
+      //justifyContent: 'space-between',
+      // paddingHorizontal: 40,
+      // paddingVertical: 20,
+      textAlign: 'right'
     },
 
     itemText: {
       color: 'black',
       fontSize: 20,
+      textAlign: 'right'
+
     },
 
     separator:{
@@ -150,10 +162,12 @@ const styles = StyleSheet.create({
     },
 
     boxStyle:{
-      height:100,
-      width:360,
+      height:200,
+      width:300,
+      margin:30,
       resizeMode: 'repeat',
-      padding:70
+      paddingHorizontal: 30,
+      paddingVertical: 70
     }
     
   });
