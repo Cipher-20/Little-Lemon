@@ -45,24 +45,32 @@ const menuItemsToDisplay = [
       ],
     },
   ];
-
+  
 
 const ItemBackground = ({ name, price }) => (
-  <View >
-
-    <ImageBackground
-      source={require('../../assets/box-middle.png')}
-      style={styles.boxStyle}>
+   <View>
+     <Image
+           source={require('../../assets/box-top.png')}
+           style={styles.boxTopStyle}
+     />  
+    
+       <ImageBackground
+        source={require('../../assets/box-middle.png')}
+        style={styles.boxMainStyle}
+        >
           <View style={styles.innerContainer}>
             <Text style={styles.itemText}>{name}</Text>
             <Text style={styles.itemText}>{price}</Text>
           </View>
 
-    </ImageBackground>
-     
+       </ImageBackground>
 
-  </View>
-    );
+       <Image
+           source={require('../../assets/box-bottom.png')}
+           style={styles.boxBottomStyle}
+     />  
+   </View>
+);
 
 
 const Title = ({ title }) => (
@@ -127,15 +135,13 @@ const styles = StyleSheet.create({
         fontSize: 35,
         color: '#F4CE14',
         textAlign:'center',
-        margin: 15
+        margin: 15,
     },
 
 
     innerContainer:{
-      // flexDirection: 'row',
-      //justifyContent: 'space-between',
-      // paddingHorizontal: 40,
-      // paddingVertical: 20,
+      paddingHorizontal: 30,
+      paddingVertical: 70,
       textAlign: 'right'
     },
 
@@ -161,13 +167,35 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
 
-    boxStyle:{
+    boxMainStyle:{
       height:200,
       width:300,
-      margin:30,
-      resizeMode: 'repeat',
-      paddingHorizontal: 30,
-      paddingVertical: 70
+      resizeMode: 'contain',
+      marginLeft:30,
+      marginTop:30,
+      // backgroundColor: '#fff',
+      
+
+      
+    },
+
+    boxTopStyle:{
+      resizeMode: 'contain',
+      width: 306                                                                                                                                                                                                           ,
+      height: 45,
+      marginLeft:27,
+      marginTop:0,
+position: 'absolute',
+
+    },
+
+    boxBottomStyle:{
+      resizeMode: 'contain',
+      width: 306                                                                                                                                                                                                           ,
+      height: 45,
+      marginLeft:27,
+      //position: 'absolute',
+      marginTop:-15,
     }
     
   });
